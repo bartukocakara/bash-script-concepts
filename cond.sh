@@ -31,10 +31,33 @@
 
 # ÖRNEK
 
-SAYI=10
+YAS=28
 
-if [ $SAYI == 10 ]
+# AND --> && veya -a
+	if [ $YAS -gt 18 ] && [ $YAS -lt 30 ]
 	then
-		echo "Koşul doğru"
-fi
+		echo "Yaşınız 18 ve 30 arasındadır" 
+	fi
+
+	if [[ $YAS -gt 18 && $YAS -lt 30 ]]
+	then
+		echo "Yaşınız 18 ve 30 arasındadır"
+	fi
+
+	if [ $YAS -gt 25 -a $YAS -lt 29 ]
+	then
+		echo "Yaşınız 25 ve 29 arasındadır"
+	fi
+
+# OR --> || veya -o
+	if [[ $YAS -gt 18 || $YAS -lt 25 ]]
+	then
+		echo "Yaşınız 18den büyüktür veya 25den küçüktür"
+	fi
+
+	if [ $YAS -gt 18 -o $YAS -lt 25 ]
+	then
+		echo "Yaşınız 18den büyüktür veya 25ten küçüktür"
+	fi
+
 
